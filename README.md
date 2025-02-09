@@ -85,12 +85,29 @@
 <body>
     <div class="login-container">
         <h2>SAZUB Student Login</h2>
-        <form class="login-form" action="https://abdulramat.github.io/saadu-zungur-university-bauchi/">
-            <input type="text" placeholder="Matric Number" required>
-            <input type="password" placeholder="Password" required>
+        <form class="login-form" id="loginForm">
+            <input type="text" id="matricNumber" placeholder="Matric Number" required>
+            <input type="password" id="password" placeholder="Password" required>
             <button type="submit">Login</button>
             <a href="#">Forgot Password?</a>
         </form>
     </div>
+
+    <script>
+        const loginForm = document.getElementById('loginForm');
+
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            const matricNumber = document.getElementById('matricNumber').value;
+            const password = document.getElementById('password').value;
+
+            if (matricNumber === "MTHU/23/0913" && password === "123456789") {
+                window.location.href = "https://abdulramat.github.io/saadu-zungur-university-bauchi/";
+            } else {
+                alert("Incorrect Matric Number or Password.");
+            }
+        });
+    </script>
 </body>
 </html>
